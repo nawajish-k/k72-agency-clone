@@ -2,10 +2,10 @@
 
 @font-face {
     font-family: inter300;
-    src: url(../public/fonts/Inter300/Inter-VariableFont_opsz\,wght.ttf);
+    src: url(/fonts/Inter300/Inter-VariableFont_opsz\,wght.ttf);
 }
 
 @font-face {
     font-family: inter500;
-    src: url(../public/fonts/Inter500/Inter-VariableFont_opsz\,wght.ttf);
+    src: url(/fonts/Inter500/Inter-VariableFont_opsz\,wght.ttf);
 }
