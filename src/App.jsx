@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import FullScreenNav from './components/navbar/FullScreenNav'
 import Navbar from './components/navbar/Navbar'
 import Agence from './pages/Agence'
 import Home from './pages/Home'
