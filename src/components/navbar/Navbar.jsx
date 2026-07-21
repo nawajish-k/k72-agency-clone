@@ -29,12 +29,19 @@ const Navbar = () => {
         onMouseLeave={() => {
           navChange.current.style.height = "0%";
         }}
-        className="relative h-12 w-63 bg-black"
+        className="menu-bar relative h-12 w-60 bg-black"
       >
-        <div className="relative">
-          
+        <div className="relative z-10 flex h-12 items-center justify-end px-10">
+          <button className="hamburger">
+            <span></span>
+            <span></span>
+          </button>
         </div>
-        <div ref={navChange} className="bg-[#D3FD50] transition-all absolute top-0 h-0 w-full"></div>
+        {/* animated bg */}
+        <div
+          ref={navChange}
+          className="bg-[#D3FD50] transition-all absolute top-0 h-0 w-full"
+        ></div>
       </div>
     </div>
   );

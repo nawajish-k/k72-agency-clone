@@ -9,3 +9,65 @@
     font-family: inter500;
     src: url(/fonts/Inter500/Inter-VariableFont_opsz\,wght.ttf);
 }
+
+/* menu-bar */
+.hamburger {
+    width: 52px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.hamburger span {
+    display: block;
+    border-top: 2px solid currentColor;
+}
+
+.hamburger {
+    color: white;
+}
+
+.menu-bar:hover .hamburger {
+    color: black;
+}
+
+.hamburger span:first-child {
+    width: 100%;
+}
+
+.hamburger span:last-child {
+    width: 50%;
+    margin-left: auto;
+}
+
+/* FullScreenNav elements animation */
+.moveLink {
+    opacity: 0;
+}
+
+.link:hover .moveLink {
+    opacity: 1;
+}
+
+.moveX {
+    animation-name: moveAnimation;
+    animation-duration: 11.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes moveAnimation {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
