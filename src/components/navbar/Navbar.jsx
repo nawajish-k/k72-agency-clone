@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef } from "react";
 
-const Navbar = () => {
+const Navbar = ({ setMenuOpen, setPlayMenuAnim }) => {
   const navChange = useRef(null);
 
   return (
@@ -29,10 +29,15 @@ const Navbar = () => {
         onMouseLeave={() => {
           navChange.current.style.height = "0%";
         }}
-        className="menu-bar relative h-12 w-60 bg-black"
+        className="menu-bar relative h-12 w-60 bg-black cursor-pointer"
+        onClick={() => {
+          setPlayMenuAnim(true);
+        }}
       >
         <div className="relative z-10 flex h-12 items-center justify-end px-10">
-          <button className="hamburger">
+          <button
+            className="hamburger"
+          >
             <span></span>
             <span></span>
           </button>
