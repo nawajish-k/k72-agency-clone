@@ -35,9 +35,7 @@ const Navbar = ({ setMenuOpen, setPlayMenuAnim }) => {
         }}
       >
         <div className="relative z-10 flex h-12 items-center justify-end px-10">
-          <button
-            className="hamburger"
-          >
+          <button className="hamburger">
             <span></span>
             <span></span>
           </button>

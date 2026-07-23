@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useRef } from "react";
 import React from "react";
 
-const NavStairs = ({ isOpen, onComplete }) => {
+const NavStairs = ({ isOpen, onCovered, onComplete }) => {
   const stairParentRef = useRef(null);
 
   useGSAP(() => {
@@ -15,34 +15,38 @@ const NavStairs = ({ isOpen, onComplete }) => {
       display: "block",
     });
 
-    tl.from(".menu-stair", {
-        height: 0,
-        duration:0.8,
-        stagger:{
-          amount:-0.3
-        },
-        ease:"power4.inOut"
-      });
-      
-      
-      tl.to(".menu-stair", {
-        yPercent:100,
-        duration:0.8,
-        stagger:{
-          amount:-0.25
-        },
-        ease:"power4.inOut"
-      });
+    gsap.set(".menu-stair", {
+      yPercent: -100,
+    });
 
     tl.to(".menu-stair", {
-      y: "100%",
+      yPercent: 0,
+      duration: 0.7,
       stagger: {
-        amount: -0.25,
+        each: 0.08,
+        from: "end",
       },
+      ease: "expo.inOut",
+    });
+
+    tl.call(() => {
+      onCovered();
     });
 
     tl.call(() => {
       onComplete();
+    });
+
+    tl.to({}, { duration: 0.08 });
+
+    tl.to(".menu-stair", {
+      yPercent: 100,
+      duration: 0.8,
+      stagger: {
+        each: 0.08,
+        from: "end",
+      },
+      ease: "expo.inOut",
     });
 
     tl.set(stairParentRef.current, {

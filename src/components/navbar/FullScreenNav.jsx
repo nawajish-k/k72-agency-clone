@@ -2,7 +2,8 @@ import React from "react";
 
 const FullScreenNav = ({ setMenuOpen }) => {
   return (
-    <div id="fullscreen"
+    <div
+      id="fullscreen"
       className="fixed inset-0 z-[100] text-white h-screen w-full overflow-hidden bg-black p-2.5"
       style={{
         opacity: 1,
@@ -22,16 +23,16 @@ const FullScreenNav = ({ setMenuOpen }) => {
             ></path>
           </svg>
         </div>
-        <div 
-        onClick={() => setMenuOpen(false)}
-        className="h-28 w-28 relative cursor-pointer">
+        <div
+          onClick={() => setMenuOpen(false)}
+          className="h-28 w-28 relative cursor-pointer"
+        >
           <div className="h-38 w-1 -rotate-45 origin-top absolute bg-[#D3FD50]"></div>
           <div className="h-38 w-1 right-0 rotate-45 origin-top absolute bg-[#D3FD50]"></div>
         </div>
       </div>
 
       <div className="py-5">
-
         <div className="link relative border-t border-white">
           <h1 className="font-[inter500] text-[8vw] font-semibold leading-[0.8] py-3 text-center">
             PROJECTS
@@ -77,7 +78,7 @@ const FullScreenNav = ({ setMenuOpen }) => {
             </div>
           </div>
         </div>
-        
+
         <div className="link relative border-t border-white">
           <h1 className="font-[inter500] text-[8vw] font-semibold leading-[0.8] py-3 text-center">
             AGENCE
@@ -169,7 +170,7 @@ const FullScreenNav = ({ setMenuOpen }) => {
             </div>
           </div>
         </div>
-        
+
         <div className="link relative border-y border-white">
           <h1 className="font-[inter500] text-[8vw] font-semibold leading-[0.8] py-3 text-center">
             BLOGUE
@@ -215,9 +216,7 @@ const FullScreenNav = ({ setMenuOpen }) => {
             </div>
           </div>
         </div>
-        
       </div>
-
     </div>
   );
 };

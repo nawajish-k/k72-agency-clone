@@ -18,15 +18,13 @@ const App = () => {
   return (
     <div>
       <div
- id="menu-wrapper"
- className={`fixed inset-0 z-[100] transition-opacity duration-300 ${
-   menuOpen 
-   ? "opacity-100 pointer-events-auto"
-   : "opacity-0 pointer-events-none"
- }`}
->
- <FullScreenNav setMenuOpen={setMenuOpen}/>
-</div>
+        id="menu-wrapper"
+        className={`fixed inset-0 z-[100] ${
+          menuOpen ? "pointer-events-auto" : "pointer-events-none hidden"
+        }`}
+      >
+        <FullScreenNav setMenuOpen={setMenuOpen} />
+      </div>
       <Navbar
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
@@ -41,9 +39,10 @@ const App = () => {
 
       <NavStairs
         isOpen={playMenuAnim}
-        onComplete={() => {
-          console.log("onComplete fired");
+        onCovered={() => {
           setMenuOpen(true);
+        }}
+        onComplete={() => {
           setPlayMenuAnim(false);
         }}
       />
